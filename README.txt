@@ -1,14 +1,49 @@
-input format:
+input file format:
+    number of vertices
+    source vertex
+    number of edges
+    vertex, cost, vertex
+    vertex, cost, vertex
+    .
+    .
+    .
+    .
+    vertex, cost, vertex
 
-    6           # number of vertices
-    5           # source vertex
-    9           # number of edges
-    1 2 4
-    1 5 3
-    2 3 2       # first point | second point | distance
-    2 4 9
-    2 5 8
-    3 4 1
-    4 5 5
-    4 6 3
-    5 6 7
+output file format:
+    number of vertices
+    vertex, cost, parent
+    vertex, cost, parent 
+    (source vertex) vertex -1 -1
+    .
+    .
+    .
+    .
+    vertex, cost, parent
+
+Example:
+       
+       17
+    1-----3
+     \   
+   14 \ 
+       2
+
+    number of vertices = 3
+    source vertex = 2 ( can pick any )
+    number of edges = 2
+    1 -> 3 cost = 17
+    1 -> 2 cost = 14
+
+    input file:
+    3
+    2
+    2
+    1 17 3
+    1 14 2
+
+    output file:
+    3
+    1 14 2
+    2 -1 -1
+    3 31 1
